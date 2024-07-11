@@ -5,11 +5,12 @@ namespace Ispit.Proizvodi
 	internal class Predavac
 	{
 		public event Delegates.PocniPisatiIspit Ispit;
-
+		public DateTime pocetakIspita;
 		public void ZvoniZvono()
 		{
+			pocetakIspita = DateTime.Now;
 			Console.WriteLine("Zvoni zvono i ispit pocinje\n\n");
-			Ispit?.Invoke(DateTime.Now);
+			Ispit?.Invoke(pocetakIspita);
 		}
 
 		public void IspitZaprimljen(Polaznik polaznik)

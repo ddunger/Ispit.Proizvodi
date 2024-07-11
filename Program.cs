@@ -27,7 +27,7 @@ namespace Ispit.Proizvodi
 			int delay = 5;
 			foreach (var polaznik in polaznici)
 			{
-				polaznik.OdgovoriNaPitanja(DateTime.Now.AddMinutes(delay));
+				polaznik.OdgovoriNaPitanja(predavac.pocetakIspita.AddMinutes(delay));
 				delay += 2;
 				Console.WriteLine("-----------------------------------------\n");
 			}
