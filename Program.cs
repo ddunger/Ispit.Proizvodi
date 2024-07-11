@@ -17,20 +17,21 @@ namespace Ispit.Proizvodi
 				new Polaznik { ImePrezime = "Filip Filipovic" }
 			};
 
-			predavac.ZvoniZvono();
 
 			foreach (var polaznik in polaznici)
 			{
 				polaznik.IspitZavrsen += predavac.IspitZaprimljen;
 			}
-
-			int delay = 5;
 			foreach (var polaznik in polaznici)
 			{
-				polaznik.OdgovoriNaPitanja(predavac.pocetakIspita.AddMinutes(delay));
-				delay += 2;
-				Console.WriteLine("-----------------------------------------\n");
+				predavac.Ispit += (startTime) =>
+				{
+					polaznik.OdgovoriNaPitanja(DateTime.Now);
+				};
 			}
+			predavac.ZvoniZvono();
+
+
 			polaznici[2].PredajOdgovoreNaPitanja();
 
 			Console.ReadLine();
