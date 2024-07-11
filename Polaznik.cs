@@ -12,7 +12,7 @@ namespace Ispit.Proizvodi
 
 		public void OdgovoriNaPitanja(DateTime vrijeme_pocetka)
 		{ 
-			Console.WriteLine($"Polaznik {ImePrezime} je krenuo pisati ispit u {vrijeme_pocetka.ToString("mm:HH, dd.MM.yyyy")}");
+			Console.WriteLine($"Polaznik {ImePrezime} je krenuo pisati ispit u {vrijeme_pocetka.ToString("HH:mm, dd.MM.yyyy")}");
 		}
 
 		public void PredajOdgovoreNaPitanja()

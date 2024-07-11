@@ -24,9 +24,9 @@ namespace Ispit.Proizvodi
 				polaznik.IspitZavrsen += predavac.IspitZaprimljen;
 			}
 
+			int delay = 5;
 			foreach (var polaznik in polaznici)
 			{
-				int delay = 5;
 				polaznik.OdgovoriNaPitanja(DateTime.Now.AddMinutes(delay));
 				delay += 2;
 				Console.WriteLine("-----------------------------------------\n");
